@@ -23,7 +23,7 @@ echo 'Unload rvm'
 __rvm_unload
 
 echo '=== Navigate to tests folder'
-cd /Users/buddybuild/workspace/test/appium-cucumber
+cd /Users/buddybuild/workspace/YOUR_TEST_FOLDER
 
 echo '=== bundler'
 echo password | sudo -S gem install bundler
