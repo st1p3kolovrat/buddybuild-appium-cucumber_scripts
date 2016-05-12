@@ -1,13 +1,4 @@
-buddybuild_prebuild.sh
-
-
 #!/usr/bin/env bash
-
-echo "Set Android Home"
-export ANDROID_HOME=/Users/buddybuild/.android-sdk
-
-echo '=== Detected android command, run android list sdk --all'
-android list sdk --all
 
 echo '=== PREBUILD FOLDER STRUCTURE'
 ls -1
