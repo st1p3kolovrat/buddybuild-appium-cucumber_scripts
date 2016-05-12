@@ -32,9 +32,14 @@ npm install wd
 echo '=== Authorize simulator access'
 echo password | sudo -S authorize_ios
 
-echo '=== First start appium server, then start your cucumber tests'
+echo '=== First start appium server, then start your cucumber tests, if one test has failed show exit 1 and mark build as failed'
 nohup appium --native-instruments-lib -lt 999999 &
-sleep 15 && bundle exec rake; pkill -f appium
+sleep 15 && bundle exec rake status=$?
+pkill -f appium
+if [ $status -ne 0 ]; then
+echo TESTS FAILED
+exit 1
+fi
 
 echo '=== Upload results to s3'
 aws s3 sync ./results s3://YOUR_BUCKET_NAME/AppiumResults/$BUDDYBUILD_BUILD_NUMBER/
