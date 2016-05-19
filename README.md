@@ -6,3 +6,8 @@ In order to have your Appium/Cucumber test automation beauty up&running continuo
 2. **buddybuild_postbuild.sh**
 
 
+More info can be found here: https://blogapplyquality.com/2016/05/19/appiumcucumber-tests-uprunning-on-buddybuild/ 
+
+
+
+
