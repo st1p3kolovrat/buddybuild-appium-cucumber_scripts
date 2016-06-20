@@ -39,8 +39,9 @@ status=$?
 pkill -f appium
 if [ $status -ne 0 ]; then
 echo TESTS FAILED
-exit 1
-fi
 
 echo '=== Upload results to s3'
 aws s3 sync ./results s3://YOUR_BUCKET_NAME/AppiumResults/$BUDDYBUILD_BUILD_NUMBER/
+
+exit 1
+fi
